@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>reveal.js - The HTML Presentation Framework</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+if( window.location.search.match( /print-pdf/gi ) ) {
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = 'css/print/pdf.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+}
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+      <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section class="" data-id="939d150e629ba16a71c276365ba4646c">&nbsp;<h1 class="absolute-element" style="position: absolute; width: 619.042588042588px; height: 96px; z-index: 4; left: 163px; top: 257px; max-height: none; max-width: none;">C++</h1>
+        </section>
+        <section class="" data-id="5ad0188b17aa927422f5948c74130f4c">
+          <h2>&nbsp;C++</h2>
+          <div class="absolute-element" style="position: absolute; width: 433px; height: 140px; z-index: 4; left: 287px; top: 134px;">
+            <ol>
+              <li>
+                <span style="text-align: center;">Statically typed</span>
+              </li>
+              <li>
+                <span style="text-align: center;">Compiles to native code</span>
+              </li>
+              <li>
+                <span style="text-align: center;">Exists since 1983</span>
+              </li>
+            </ol>
+          </div>
+        </section>
+        <section class="" data-id="f6b8256020edc66e4910e8d85398bd6b">
+          <h2>C++</h2>
+          <div>Many different compilers:</div>
+          <div>Clang</div>
+          <div>GCC</div>
+          <div>MinGW</div>
+          <div>MSVC</div>
+          <div>....</div>
+        </section>
+        <section class="" data-id="931b0018d9b7590c18c2170e3ec817d9">
+          <h2>C++</h2>
+          <div>C++ is 'constantly' updated</div>
+          <div>C++98</div>
+          <div>C++03 (Bugfix)</div>
+          <div>C++11</div>
+          <div>C++14</div>
+          <div>Coming soon C++17</div>
+        </section>
+        <section class="" data-id="ad330dd60e69f3856a80b1262c043c95">
+          <h2>C++</h2>
+          <div>
+            <font color="#6aa84f">Why</font>?</div>
+          <div>
+            <ul>
+              <li>
+                <span style="text-align: center;">Zero cost abstractions</span>
+                <br>
+              </li>
+              <li>
+                <span style="text-align: center;">Static optimizations</span>
+                <br>
+              </li>
+              <li>
+                <span style="text-align: center;">Powerful</span>
+                <br>
+              </li>
+              <li>
+                <span style="text-align: center;">Fine grained control</span>
+                <br>
+              </li>
+              <li>
+                <span style="text-align: center;">Newer versions of C++ are safer, faster and easier</span>
+              </li>
+              <li>
+                <span style="text-align: center;">C++ is widely used</span>
+              </li>
+              <li>
+                <span style="text-align: center;">Many tools are libraries are available (emsscripten, tbb,</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="" data-id="0b5e3bee93dbcc70725cd6c87507d484">
+          <h2>C++</h2>
+          <div>
+            <font color="#ff0000">Why not</font>?</div>
+          <div>
+            <ul>
+              <li>
+                <span style="text-align: center;">C++ compiles slowly</span>
+                <br>
+              </li>
+              <li>
+                <span style="text-align: center;">Syntax is hard to parse</span>
+                <br>
+              </li>
+              <li>
+                <span style="text-align: center;">Easy to make critical errors</span>
+                <br>
+              </li>
+              <li>
+                <span style="text-align: center;">Complex language with many edge cases</span>
+                <br>
+              </li>
+              <li>
+                <span style="text-align: center;">Every compiler is different</span>
+              </li>
+              <li>
+                <span style="text-align: center;">Successful compilation != correctness</span>
+              </li>
+              <li>
+                <span style="text-align: center;">Verbose</span>
+              </li>
+              <li>
+                <span style="text-align: center;">Error messages are also verbose (Compiler specific)</span>
+              </li>
+              <li>
+                <span style="text-align: center;">Nullpointer</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="" data-id="785c7970cfde4648e76dca74cfe0fd39">
+          <h2>C++11</h2>
+          <div>
+            <font color="#4a86e8">Auto</font>
+            <br>
+            <pre><code>std::vector&lt;int&gt; iv{ 1, 2, 3, 4 }; // C++11
+            </code></pre>
+
+            Explicit type
+
+          </div>
+          <div>
+            <pre><code> <span>std::vector&lt;int,std::allocator&lt;int&gt;&gt;::iterator it = begin(iv); // C++98</span></code></pre>
+          </div>Compiler inferred the type though <font color="#4a86e8">auto</font>
+          <br>
+          <div>
+            <pre><code> a<span>uto it = begin(iv);</span></code></pre>
+          </div>
+          <br>
+        </section>
+        <section class="" data-id="6ece3241b38fbd9176f966299fa263cc">
+          <h2>C++11</h2>
+          <div>Finally some meta functions</div>
+          <div>
+            <pre><code> std::function&lt;int(int,int)&gt; f; // C++11 
+ //vs
+ int (*f)(int,int); // C++98
+            </code></pre>
+          </div>Use case<br>
+          <div>
+            <pre><code> int add(int a,int b) { return a + b; }
+ int call(std::function&lt;int(int,int)&gt; f){ return f(1,1);}
+ ..
+ call(add); // returns 2 </code></pre>
+          </div>std::function works &nbsp;with:<br>
+          <div>
+            <ul>
+              <li>functions</li>
+              <li>functors</li>
+              <li>bind expressions</li>
+              <li>lambda expressions</li>
+            </ul>
+          </div>
+        </section>
+        <section class="" data-id="ca2f5f39068e35084896f3a77c85e3bb">
+          <h2>C++11</h2>Lambda<pre><code> auto Add = [](int a, int b) -&gt; int { return a + b; };
+ auto i = Add(1,1);
+ // i = 2 
+          </code></pre>Higher Order Function<br>
+          <div>
+            <pre><code>void print_vector(const std::vector&lt;int&gt; &amp;v, std::function&lt;bool(int)&gt; f){ 
+  for (int i : v){ 
+    if (f(i)) 
+      std::cout &lt;&lt; i &lt;&lt; " "; 
+  } 
+  std::cout &lt;&lt; std::endl; 
+}
+            </code></pre>
+          </div>
+          <div>
+            <pre><code>std::vector&lt;int&gt; iv{ 1, 2, 3, 4, 6, 7, 8, 9, 10 }; 
+
+print_vector(iv, [](int i) {return i % 2 == 0; });&nbsp;<span>// prints: 2 4 6 8 10 </span>
+print_vector(iv, [](int i) {return i &gt; 5; }); <span>// prints: 6 7 8 9 10</span></code></pre>
+          </div>
+          <br>
+        </section>
+        <section class="" data-id="5bff3507b6da1f975fde53f3dbaa6e0e">
+          <h2>C++11</h2>Raw Pointer<div>
+            <pre><code> <span>Foo* ptr = new Foo(); // c++98</span></code><code> delete ptr; </code></pre>
+            <div>
+              Smart Pointer
+              <pre><code> std::unique_ptr&lt;Foo&gt; <span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">ptr = std::make_unique&lt;Foo&gt;(); // c++11</span></code><code> //or
+ auto <span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">ptr = std::make_unique&lt;Foo&gt;();</span>
+
+              </code></pre>
+            </div>
+          </div>
+          <div>
+            <ul>
+              <li>Automatically frees <font color="#4a86e8">ptr</font> if it goes out of scope</li>
+              <li>No confusion with delete or delete[]</li>
+              <li>Almost no performance penalty</li>
+              <li>Has a move contructor&nbsp;</li>
+            </ul>
+          </div>
+        </section>
+        <section class="" data-id="28b81efe227f94c437ba62b507c1bcab">
+          <h2>c++11</h2>
+          <div>Finally a real nullptr</div>
+          <div>
+            <pre><code> auto value = some_unknown_function(); 
+            </code></pre>
+          </div>
+          <div>
+            <pre><code><span style="font-family: monospace; font-size: 19.544336318969727px; font-style: normal; font-variant: normal;"> if(value != 0){ // c++98
+</span><span style="font-family: monospace; font-size: 19.544336318969727px; font-style: normal; font-variant: normal;">  // do sth
+ }</span></code></pre>
+          </div>
+          <div>
+            <pre><code> <span>if(value != nullptr){  //c++11
+   // do sth 
+ }</span></code></pre>
+          </div>
+          <ul>
+            <li>The C++98 version works with everything that is comparable with 0.</li>
+            <li>The C++11 version only works if <font color="#4a86e8">value</font> is a pointer.</li>
+            <li>Which one is more clear?</li>
+          </ul>
+        </section>
+        <section class="" data-id="25683556230d2f18f8a79404d991394d">
+          <h2>C++</h2>
+          <div>Templates</div>
+          <div>
+            <pre><code>template&lt;typename T&gt; 
+class Box{
+  T value;
+...
+}
+            </code></pre>
+          </div>
+          <div>Similar to generics in Java, but ...</div>
+          <div>
+            <pre><code> auto b = Box&lt;int&gt;(42);</code></pre>
+          </div>The compiler will generate<br>
+          <div>
+            <pre><code> class Box{
+   int value;
+ ...
+ }</code></pre>
+          </div>
+          <br>
+        </section>
+        <section class="" data-id="316a35b5d818a1f73da505aa8b7cc0a7">
+          <h2>C++11</h2>
+          <div>New alias in C++11</div>
+          <div>
+            <pre><code> template&lt;typename A, typename B&gt; struct tuple{ A a; B b; }</code></pre>
+          </div>
+          <div>
+            <font color="#6aa84f">using </font>works with templates</div>
+          <div>
+            <pre><code> template&lt;typename T&gt; // C++11
+ using first_int_tuple1 = tuple&lt;int, T&gt;;
+            </code></pre>
+          </div>
+          <font color="#6aa84f">typedef </font>does not work with templates<pre><code> template&lt;typename T&gt; // C++98
+ struct first_int_tuple2 { 
+   typedef tuple&lt;int, T&gt; value; 
+ }
+          </code></pre>It looks like<br>
+          <div>
+            <pre><code> first_int_tuple1&lt;int&gt; my_tuple1; 
+ first_int_tuple2&lt;int&gt;::value my_tuple2;</code></pre>
+          </div>
+          <br>
+        </section>
+        <section class="" data-id="6af750f6c23aac8f038884859e0b1efa">
+          <h2>C++11</h2>
+          <div>Variadic templates are awesome</div>
+          <div>
+            <br>
+          </div>
+          <div>
+            <pre><code> template&lt;typename T&gt; 
+ void print(const T &amp;t){ 
+   std::cout &lt;&lt; t &lt;&lt; std::endl; 
+ } 
+
+ template&lt;typename T,typename ... Args&gt; 
+ void print(const T &amp;t, Args ... rest){ 
+   std::cout &lt;&lt; t &lt;&lt; " ,"; print(rest...); 
+ }
+            </code></pre>
+          </div>Why?<br>
+          <div>
+            <pre><code> print(42,"Hello",10.0f,"World"); // 42, Hello, 10.0, "World"
+ print(1,2,3,4,5,6,7,8,9,10); // 1, 2, 3, 4, 5, 6, ,7 ,8 , 9, 10</code></pre>
+          </div>
+          <br>
+        </section>
+        <section class="" data-id="764fc57cf59766731cd57df326e7a694">
+          <h2>C++11</h2>
+          <div>Constexpr ... yay</div>
+          <div>
+            <pre><code> constexpr int fact(int i){ 
+   return (i == 0) ? 1 : i * fact(i - 1); 
+ }
+            </code></pre>
+          </div>
+          <div>Evaluated at compile-time</div>
+          <div>
+            <pre><code> // all expression have the same meaning
+ int i = 1 * 2 * 3 * 4; 
+ int i = 24;
+<span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"> int i = fact(4);</span>
+            </code></pre>
+          </div>
+          <ul>
+            <li>But it can also be used at runtime!</li>
+          </ul>
+        </section>
+        <section class="" data-id="cf95b2aaf1871fd52b0b0d45254de5d1">
+          <h2>c++11</h2>
+          <div>Move</div>
+          <div>
+            <pre><code> std::vector&lt;int&gt; make_vector(){ 
+   auto v = std::vector&lt;int&gt; { 1, 2, 3, 4, 5}; 
+   return v; 
+ }
+            </code></pre>
+          </div>
+          <div>
+            <ul>
+              <li>
+                <span style="font-size: 36.3636360168457px; font-style: normal; font-variant: normal; text-align: center;">In C++98 this would copy</span>
+              </li>
+              <li>
+                <span style="font-size: 36.3636360168457px; font-style: normal; font-variant: normal; text-align: center;">C++11 moves by default (It's fast)</span>
+              </li>
+            </ul>
+            <div>
+              <br>
+            </div>
+          </div>
+          <div>
+            <pre><code> struct Foo {
+   std::vector&lt;Bar&gt; vb;
+   // Move constructor, no copy
+   Foo(std::vector&lt;Bar&gt; &amp;&amp;v): vb(v) {}
+ };
+            </code></pre>
+          </div>
+          <br>
+        </section>
+        <section class="" data-id="129803b2ef03931e23f8ea9b5861abf1">
+          <h2>c++11</h2>
+          <div>Type constraints</div>
+          <div>
+            <pre><code>template&lt;typename T&gt; 
+T add(T a, T b){ 
+  static_assert(std::is_integral&lt;T&gt;::value || 
+                std::is_floating_point&lt;T&gt;::value, 
+                "Not a numeric value"); 
+  return a + b; 
+}
+            </code></pre>
+          </div>works for<br>
+          <div>
+            <pre><code> add(1,2);
+ add(1.0f,2.0f);<br></code></pre>
+          </div>
+          <br>
+        </section>
+        <section class="" data-id="b280f76bf3f146630e4d31b89ffddefe">
+          <h2>c++11</h2>
+          <div>Range based for loop</div>
+          <div>
+            <pre><code> auto v = std::vector&lt;int&gt;{1,2,3,4,5};</code></pre>
+          </div>.<br>
+          <div>
+            <pre><code> for ( int elem : v ) { // C++11
+   std:: cout &lt;&lt; elem;
+ }</code></pre>
+          </div>instead of<br>
+          <div>
+            <pre><code> for(size_t count = 0; count &lt; v.size(), ++count){
+   std::cout &lt;&lt; elem[count];
+ }</code></pre>
+          </div>
+          <pre><code> for(auto it = v.cbegin(); it != v.cend(); ++it){
+   std::cout &lt;&lt; *it;
+ }</code></pre>
+          <br>
+        </section>
+        <section class="" data-id="22f4c79e0a977d6b764fe81b6c6a4cfe">
+          <h2>C++11</h2>
+          <h3>Books</h3>
+          <div>
+            <ul>
+              <li>C++ Primer (5th Edition) by&nbsp;Stanley B. Lippman<br>
+              </li>
+              <li>Effective Modern C++ by Scott Meyers<br>
+              </li>
+              <li>http://en.cppreference.com/<br>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <br>
+          </div>
+        </section>
+
+        <!--sldes end-->
+      </div>
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+  controls: true,
+  progress: true,
+  history: true,
+  center: true,
+
+  theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+  transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Parallax scrolling
+    // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+    // parallaxBackgroundSize: '2100px 900px',
+
+    // Optional libraries used to extend on reveal.js
+  dependencies: [
+  { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+  { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+  { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});
+
+    </script>
+
+  </body>
+</html>
