@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
 
-    <title>reveal.js - The HTML Presentation Framework</title>
+    <title>Cpp11 Overview</title>
 
-    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-    <meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="Cpp11 Overview">
+    <meta name="author" content="Maik Klein">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="css/reveal.min.css">
-    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
 
     <!-- For syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -163,11 +163,11 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
           </div>
           <div>
-            <pre><code> <span>std::vector&lt;int,std::allocator&lt;int&gt;&gt;::iterator it = begin(iv); // C++98</span></code></pre>
+            <pre><code> std::vector&lt;int,std::allocator&lt;int&gt;&gt;::iterator it = begin(iv); // C++98</code></pre>
           </div>Compiler inferred the type though <font color="#4a86e8">auto</font>
           <br>
           <div>
-            <pre><code> a<span>uto it = begin(iv);</span></code></pre>
+            <pre><code> auto it = begin(iv);</code></pre>
           </div>
           <br>
         </section>
@@ -213,20 +213,19 @@ if( window.location.search.match( /print-pdf/gi ) ) {
           <div>
             <pre><code>std::vector&lt;int&gt; iv{ 1, 2, 3, 4, 6, 7, 8, 9, 10 }; 
 
-print_vector(iv, [](int i) {return i % 2 == 0; });&nbsp;<span>// prints: 2 4 6 8 10 </span>
-print_vector(iv, [](int i) {return i &gt; 5; }); <span>// prints: 6 7 8 9 10</span></code></pre>
+print_vector(iv, [](int i) {return i % 2 == 0; });&nbsp;// prints: 2 4 6 8 10 
+print_vector(iv, [](int i) {return i &gt; 5; }); // prints: 6 7 8 9 10</code></pre>
           </div>
           <br>
         </section>
         <section class="" data-id="5bff3507b6da1f975fde53f3dbaa6e0e">
           <h2>C++11</h2>Raw Pointer<div>
-            <pre><code> <span>Foo* ptr = new Foo(); // c++98</span></code><code> delete ptr; </code></pre>
+            <pre><code> Foo* ptr = new Foo(); // c++98</code><code> delete ptr; </code></pre>
             <div>
               Smart Pointer
-              <pre><code> std::unique_ptr&lt;Foo&gt; <span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">ptr = std::make_unique&lt;Foo&gt;(); // c++11</span></code><code> //or
- auto <span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">ptr = std::make_unique&lt;Foo&gt;();</span>
-
-              </code></pre>
+              <pre><code> std::unique_ptr&lt;Foo&gt; ptr = std::make_unique&lt;Foo&gt;(); // c++11 
+ //or
+ auto ptr = std::make_unique&lt;Foo&gt;();</code></pre>
             </div>
           </div>
           <div>
@@ -246,14 +245,14 @@ print_vector(iv, [](int i) {return i &gt; 5; }); <span>// prints: 6 7 8 9 10</sp
             </code></pre>
           </div>
           <div>
-            <pre><code><span style="font-family: monospace; font-size: 19.544336318969727px; font-style: normal; font-variant: normal;"> if(value != 0){ // c++98
-</span><span style="font-family: monospace; font-size: 19.544336318969727px; font-style: normal; font-variant: normal;">  // do sth
+            <pre><code> if(value != 0){ // c++98
+   // do sth
  }</span></code></pre>
           </div>
           <div>
-            <pre><code> <span>if(value != nullptr){  //c++11
+            <pre><code> if(value != nullptr){  //c++11
    // do sth 
- }</span></code></pre>
+ }</code></pre>
           </div>
           <ul>
             <li>The C++98 version works with everything that is comparable with 0.</li>
@@ -346,7 +345,7 @@ class Box{
             <pre><code> // all expression have the same meaning
  int i = 1 * 2 * 3 * 4; 
  int i = 24;
-<span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"> int i = fact(4);</span>
+ int i = fact(4);
             </code></pre>
           </div>
           <ul>
@@ -398,12 +397,9 @@ T add(T a, T b){
   return a + b; 
 }
             </code></pre>
-          </div>works for<br>
-          <div>
+          </div>works for
             <pre><code> add(1,2);
- add(1.0f,2.0f);<br></code></pre>
-          </div>
-          <br>
+ add(1.0f,2.0f);</code></pre>
         </section>
         <section class="" data-id="b280f76bf3f146630e4d31b89ffddefe">
           <h2>c++11</h2>
