@@ -106,7 +106,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
                 <span style="text-align: center;">C++ is widely used</span>
               </li>
               <li>
-                <span style="text-align: center;">Many tools and libraries are available (emsscripten, tbb)</span>
+                <span style="text-align: center;">Many tools and libraries are available (emsscripten, tbb - and many more)</span>
               </li>
             </ul>
           </div>
@@ -134,10 +134,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
                 <br>
               </li>
               <li>
-                <span style="text-align: center;">Every compiler is different</span>
-              </li>
-              <li>
-                <span style="text-align: center;">Successful compilation != correctness</span>
+                <span style="text-align: center;">Every compiler is different but all try to be standard conform.</span>
               </li>
               <li>
                 <span style="text-align: center;">Verbose</span>
@@ -195,9 +192,30 @@ if( window.location.search.match( /print-pdf/gi ) ) {
             </ul>
           </div>
         </section>
+        <section class="" data-id="b280f76bf3f146630e4d31b89ffddefe">
+          <h2>c++11</h2>
+          <div>Range based for loop</div>
+          <div>
+            <pre><code> auto v = std::vector&lt;int&gt;{1,2,3,4,5};</code></pre>
+          </div>.<br>
+          <div>
+            <pre><code> for ( int elem : v ) { // C++11
+   std::cout &lt;&lt; elem;
+ }</code></pre>
+          </div>instead of<br>
+          <div>
+            <pre><code> for(std::size_t count = 0; count &lt; v.size(), ++count){
+   std::cout &lt;&lt; elem[count];
+ }</code></pre>
+          </div>
+          <pre><code> for(auto it = v.cbegin(); it != v.cend(); ++it){
+   std::cout &lt;&lt; *it;
+ }</code></pre>
+          *The last 2 for loops are using C++11 features to be less verbose.
+        </section>
         <section class="" data-id="ca2f5f39068e35084896f3a77c85e3bb">
-          <h2>C++11</h2>Lambda<pre><code> auto Add = [](int a, int b) -&gt; int { return a + b; };
- auto i = Add(1,1);
+          <h2>C++11</h2>Lambda<pre><code> auto add = [](int a, int b) -&gt; int { return a + b; };
+ auto i = add(1,1);
  // i = 2 
           </code></pre>Higher Order Function<br>
           <div>
@@ -230,7 +248,7 @@ print_vector(iv, [](int i) {return i &gt; 5; }); // prints: 6 7 8 9 10</code></p
           </div>
           <div>
             <ul>
-              <li>Automatically frees <font color="#4a86e8">ptr</font> if it goes out of scope</li>
+              <li>Automatically frees Foo if <font color="#4a86e8">ptr</font> goes out of scope</li>
               <li>No confusion with delete or delete[]</li>
               <li>Almost no performance penalty</li>
               <li>Has a move contructor&nbsp;</li>
@@ -401,27 +419,6 @@ T add(T a, T b){
           </div>works for
             <pre><code> add(1,2);
  add(1.0f,2.0f);</code></pre>
-        </section>
-        <section class="" data-id="b280f76bf3f146630e4d31b89ffddefe">
-          <h2>c++11</h2>
-          <div>Range based for loop</div>
-          <div>
-            <pre><code> auto v = std::vector&lt;int&gt;{1,2,3,4,5};</code></pre>
-          </div>.<br>
-          <div>
-            <pre><code> for ( int elem : v ) { // C++11
-   std:: cout &lt;&lt; elem;
- }</code></pre>
-          </div>instead of<br>
-          <div>
-            <pre><code> for(size_t count = 0; count &lt; v.size(), ++count){
-   std::cout &lt;&lt; elem[count];
- }</code></pre>
-          </div>
-          <pre><code> for(auto it = v.cbegin(); it != v.cend(); ++it){
-   std::cout &lt;&lt; *it;
- }</code></pre>
-          <br>
         </section>
         <section class="" data-id="22f4c79e0a977d6b764fe81b6c6a4cfe">
           <h2>C++11</h2>
