@@ -142,9 +142,6 @@ if( window.location.search.match( /print-pdf/gi ) ) {
               <li>
                 <span style="text-align: center;">Error messages are also verbose (Compiler specific)</span>
               </li>
-              <li>
-                <span style="text-align: center;">Nullpointer</span>
-              </li>
             </ul>
           </div>
         </section>
@@ -160,11 +157,11 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
           </div>
           <div>
-            <pre><code> std::vector&lt;int,std::allocator&lt;int&gt;&gt;::iterator it = begin(iv); // C++98</code></pre>
+            <pre><code> std::vector&lt;int,std::allocator&lt;int&gt;&gt;::iterator it = iv.begin(); // C++98</code></pre>
           </div>Compiler inferred the type though <font color="#4a86e8">auto</font>
           <br>
           <div>
-            <pre><code> auto it = begin(iv);</code></pre>
+            <pre><code> auto it = v.begin();</code></pre>
           </div>
           <br>
         </section>
@@ -177,12 +174,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
  int (*f)(int,int); // C++98
             </code></pre>
           </div>Use case<br>
-          <div>
-            <pre><code> int add(int a,int b) { return a + b; }
- int call(std::function&lt;int(int,int)&gt; f){ return f(1,1);}
- ..
- call(add); // returns 2 </code></pre>
-          </div>std::function works &nbsp;with:<br>
+          std::function works &nbsp;with:<br>
           <div>
             <ul>
               <li>functions</li>
@@ -234,7 +226,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 print_vector(iv, [](int i) {return i % 2 == 0; });&nbsp;// prints: 2 4 6 8 10 
 print_vector(iv, [](int i) {return i &gt; 5; }); // prints: 6 7 8 9 10</code></pre>
           </div>
-          <br>
+          *Prefer templates instead of std::fuction for function parameters
         </section>
         <section class="" data-id="5bff3507b6da1f975fde53f3dbaa6e0e">
           <h2>C++11</h2>Raw Pointer<div>
@@ -253,6 +245,10 @@ print_vector(iv, [](int i) {return i &gt; 5; }); // prints: 6 7 8 9 10</code></p
               <li>Almost no performance penalty</li>
               <li>Has a move contructor&nbsp;</li>
             </ul>
+          </div>
+          <br>
+          <div>
+*Note make_unique is actually C++14
           </div>
         </section>
         <section class="" data-id="28b81efe227f94c437ba62b507c1bcab">
@@ -384,7 +380,7 @@ class Box{
           <div>
             <ul>
               <li>
-                <span style="font-size: 36.3636360168457px; font-style: normal; font-variant: normal; text-align: center;">In C++98 this would copy</span>
+                <span style="font-size: 36.3636360168457px; font-style: normal; font-variant: normal; text-align: center;">In C++98 this might copy (NRVO)</span>
               </li>
               <li>
                 <span style="font-size: 36.3636360168457px; font-style: normal; font-variant: normal; text-align: center;">C++11 moves by default (It's fast)</span>
@@ -398,7 +394,7 @@ class Box{
             <pre><code> struct Foo {
    std::vector&lt;Bar&gt; vb;
    // Move constructor, no copy
-   Foo(std::vector&lt;Bar&gt; &amp;&amp;v): vb(v) {}
+   Foo(std::vector&lt;Bar&gt; &amp;&amp;v): vb(std::move(v)) {}
  };
             </code></pre>
           </div>
